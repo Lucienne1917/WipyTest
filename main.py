@@ -10,17 +10,6 @@ import re
 
 
 
-relais=Pin('P23',Pin.OUT)
-relais.value(0)
-chronometre = Timer.Chrono()
-valeur_capteur_deplacement=40
-pycom.rgbled(0x000000)
-
-
-i2c = I2C(0,pins=('P10', 'P9'))
-i2c.init(I2C.MASTER,baudrate=20000)
-#ds = DS3231.DS3231(i2c)
-
 
 def Buzzer(duree):
 
@@ -32,6 +21,7 @@ def Buzzer(duree):
 
   time.sleep(duree)
   pwm_c.duty_cycle(0) # change the duty cycle to 30%
+  # eh oui ca a change ici
 
 
 
